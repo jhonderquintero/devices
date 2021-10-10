@@ -1,5 +1,6 @@
 import { Request, Response } from "express"
 import { executeCameraScriptSync } from "../../helpers/python_run"
+import path from "path"
 
 export const imageGenerator = (req: Request, res: Response) => {
   const result = executeCameraScriptSync("img.jpg")
