@@ -10,7 +10,7 @@ export const pins: GPIO = {
   LED_STRIP_PIN: 33,
 }
 
-interface GPIO {
+export interface GPIO {
   CAMERA_SENSOR_PIN: number
   METAL_SENSOR_PIN: number
   PLASTIC_SENSOR_PIN: number
