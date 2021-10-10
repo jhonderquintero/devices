@@ -2,7 +2,6 @@ from time import sleep
 import RPi.GPIO as GPIO
 import sys
 
-
 class ServoMotor:
     """Class representing the Servo Motor device"""
     channel = None
@@ -43,7 +42,6 @@ class ServoMotor:
 
         self.PWMInstance.ChangeDutyCycle(dt)
         sleep(1.5)
-
 
 # Test Section
 if __name__ == '__main__':

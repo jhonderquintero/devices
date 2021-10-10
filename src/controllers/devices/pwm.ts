@@ -1,8 +1,9 @@
-import { ChildProcess, exec } from "child_process"
+import { ChildProcess } from "child_process"
 import { Request, Response } from "express"
+import { executePythonScript } from "../../helpers/python_run"
 
 /**
- * @param req 
+ * @param req
  * @param res
  * @returns
  */
@@ -17,7 +18,7 @@ export const pwmGenerator = (req: Request, res: Response) => {
   }
 
   // @ts-ignore
-  const script: ChildProcess = exec("ServoMotor.py", [
+  const script: ChildProcess = executePythonScript("devices/servo.py", [
     `--GPIO_PIN=${pin}`,
     `--mode=${mode}`,
   ])
