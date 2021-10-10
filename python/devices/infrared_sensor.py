@@ -14,9 +14,9 @@ if(pin is None):
     print('No pin selected, sensor cannot be executed without specify an out')
     exit(-1)
 
-GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(pin, GPIO.IN)
 
-if GPIO.input([pin]):
+if GPIO.input(pin):
     print('Input was HIGH')
     exit(1)
 else:
