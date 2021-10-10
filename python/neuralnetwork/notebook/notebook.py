@@ -15,7 +15,7 @@ import glob, os, random
 
 
 # %%
-base_path = 'garbage_dataset'
+base_path = './dataset/garbage_dataset'
 
 # img_list = glob.glob(os.path.join(base_path, '*/*.jpg'))
 
@@ -115,6 +115,5 @@ model.fit_generator(train_generator, epochs=1, validation_data=validation_genera
 
 
 # %%
-model.save('NNModel.h5')
-
+model.save('../model/NNModel.h5')
 

@@ -50,7 +50,7 @@ if __name__ == "__main__":
   assert image_path is not None
   
   path = os.path.dirname(os.path.realpath(__file__))
-  NNPath = os.path.join(path, 'NNModel.h5')
+  NNPath = os.path.join(path, './model/NNModel.h5')
   model = load_model(NNPath)
 
   image = load_image(image_path)
