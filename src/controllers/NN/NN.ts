@@ -11,11 +11,13 @@ export const NeuralNetwork = (req: Request, res: Response): void => {
   ])
 
   NNInstance.stdout.addListener("data", (data: string) => {
-    if (data.startsWith("--classification=")) {
-      res.json({
-        done: true,
-        classification: data,
-      })
-    }
+    console.log(data)
+
+    // if (data.startsWith("--classification=")) {
+    //   res.json({
+    //     done: true,
+    //     classification: data,
+    //   })
+    // }
   })
 }
