@@ -10,7 +10,7 @@ export const NeuralNetwork = (req: Request, res: Response): void => {
     "--image_path=./images/NN.jpg",
   ])
 
-  NNInstance.stdout.addListener("data", (data: string) => {
+  NNInstance.stdout.on("data", (data: string) => {
     console.log(data)
 
     // if (data.startsWith("--classification=")) {
