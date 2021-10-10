@@ -33,6 +33,11 @@ export const executePythonScript = (
   return script
 }
 
+/**
+ *
+ * @param {string} filePath
+ * @returns {boolean}
+ */
 export const executeCameraScriptSync = (filePath: string): Boolean => {
   let state: Boolean = false
 
