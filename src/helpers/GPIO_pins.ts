@@ -1,0 +1,23 @@
+export const pins: GPIO = {
+  CAMERA_SENSOR_PIN: 38,
+  METAL_SENSOR_PIN: 37,
+  PLASTIC_SENSOR_PIN: 40,
+  PAPER_SENSOR_PIN: 8,
+  METAL_PWM_PIN: 29,
+  PAPER_PWM_PIN: 31,
+  PLASTIC_PWM_PIN: 32,
+  CONVEYOR_PIN: 36,
+  LED_STRIP_PIN: 33,
+}
+
+interface GPIO {
+  CAMERA_SENSOR_PIN: number
+  METAL_SENSOR_PIN: number
+  PLASTIC_SENSOR_PIN: number
+  PAPER_SENSOR_PIN: number
+  METAL_PWM_PIN: number
+  PAPER_PWM_PIN: number
+  PLASTIC_PWM_PIN: number
+  CONVEYOR_PIN: number
+  LED_STRIP_PIN: number
+}
