@@ -8,8 +8,8 @@ import { executePythonScript } from "../../helpers/python_run"
  * @returns
  */
 export const pwmGenerator = (req: Request, res: Response) => {
-  const params = req.params
-  const { pin, mode } = params
+  const queryParams = req.query
+  const { pin, mode } = queryParams
 
   if (!pin) return res.status(400).json({ error: "Missing PWM out pin" })
 
