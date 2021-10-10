@@ -10,11 +10,10 @@ import child, { ChildProcessWithoutNullStreams } from "child_process"
 
 export const executePythonScript = (
   filePath: string,
-  args: string[] = [],
-  type: string
+  args: string[] = []
 ): ChildProcessWithoutNullStreams => {
   const script: ChildProcessWithoutNullStreams = child.spawn("python", [
-    `python_scripts/${filePath}`,
+    `python/${filePath}`,
     ...args,
   ])
 
