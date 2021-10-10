@@ -8,6 +8,6 @@ const router: Router = Router()
 router.get("/devices/image-generator", [validateErrors], imageGenerator)
 
 // @ts-ignore
-router.get("NN/classify", [validateErrors], NeuralNetwork)
+router.get("/NN/classify", [validateErrors], NeuralNetwork)
 
 export default router
