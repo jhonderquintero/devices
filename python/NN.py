@@ -1,8 +1,8 @@
 
 import sys
 import numpy as np
-from keras.models import load_model
-from keras.preprocessing import image
+from tensorflow.keras.models import load_model
+from tensorflow.keras.preprocessing import image
 
 classification = {
   0: 'cardboard',
