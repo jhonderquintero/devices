@@ -1,4 +1,4 @@
-
+import os
 import sys
 import numpy as np
 from tensorflow.keras.models import load_model
@@ -48,8 +48,11 @@ if __name__ == "__main__":
   
   print(image_path)
   assert image_path is not None
+  
+  path = os.path.dirname(os.path.realpath(__file__))
+  NNPath = os.path.join(path, 'NNModel.h5')
+  model = load_model(NNPath)
 
-  model = load_model("./NNModel.h5")
   image = load_image(image_path)
 
   final_classification = get_classification(model, image)
