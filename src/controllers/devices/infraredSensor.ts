@@ -10,15 +10,15 @@ export const infraredSensorDetection = (req: Request, res: Response) => {
   console.log(pin)
 
   const script: ChildProcessWithoutNullStreams = executePythonScript("devices/infrared_sensor.py", [
-    `--sensor=${pin}`,
+    `--pin=${pin}`,
     // "--timeout_ms=5000",
   ])
 
   script.addListener("exit", (code) => {
-    if (code == 0) {
-      res.json({ done: true })
+    if (code == 1) {
+      res.json({ detection: true })
     } else {
-      res.json({ done: false })
+      res.json({ detection: false })
     }
   })
 }
