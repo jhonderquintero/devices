@@ -4,7 +4,7 @@ import {
   executePythonScript,
 } from "../../helpers/python_run"
 
-export const NeuralNetwork = (req: Request, res: Response): void => {
+export const neuralNetwork = (req: Request, res: Response): void => {
   const result = executeCameraScriptSync("../../../images/NN.jpg")
   const NNInstance = executePythonScript("NN.py", [
     "--image_path=./images/NN.jpg",
