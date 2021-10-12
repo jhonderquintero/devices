@@ -40,8 +40,8 @@ if __name__ == "__main__":
     objectDetected: int = IR.checkObjectDetected()
 
     if objectDetected:
-        print('No Object Detection')
-        exit(0)
-    else:
         print('Object Detection')
         exit(1)
+    else:
+        print('No Object Detection')
+        exit(0)
