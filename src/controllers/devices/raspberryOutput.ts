@@ -4,13 +4,14 @@ import { executePythonScript } from "../../helpers/python_run"
 
 export const setRaspberryPinOutput = (req: Request, res: Response) => {
   const bodyParams = req.body
-  const { pin, value } = bodyParams
+  const { pin, status } = bodyParams
 
   if (!pin) return res.status(400).json({ error: "Missing out pin" })
+  if (!status) return res.status(400).json({ error: "Missing out status" })
 
   const script: ChildProcess = executePythonScript("devices/GPIO.py", [
     `--GPIO_PIN=${pin}`,
-    `--OUTPUT=${value}`,
+    `--OUTPUT=${status}`,
   ])
 
   script.addListener("exit", (code) => {
