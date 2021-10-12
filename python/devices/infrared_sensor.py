@@ -39,7 +39,7 @@ if __name__ == "__main__":
 
     objectDetected: int = IR.checkObjectDetected()
 
-    if GPIO.input(pin):
+    if objectDetected:
         print('No Object Detection')
         exit(0)
     else:
