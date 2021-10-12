@@ -54,6 +54,7 @@ if __name__ == '__main__':
 
     pin: int = commands.getArgumentValue("GPIO_PIN")
     mode = commands.getArgumentValue("mode")
+    print(pin, mode)
 
     servo = ServoMotor(pin)
 
