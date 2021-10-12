@@ -32,6 +32,7 @@ if __name__ == "__main__":
 
     pin: int = commands.getArgumentValue("pin")
     timeout: int = commands.getArgumentValue("timeout_ms")
+    print(timeout, "timeout")
 
     if(pin is None):
         print('No pin selected, sensor cannot be executed without specify a pin')
