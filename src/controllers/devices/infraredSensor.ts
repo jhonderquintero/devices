@@ -14,7 +14,7 @@ export const infraredSensorDetection = (req: Request, res: Response) => {
   } else {
     script = executePythonScript("devices/infrared_sensor.py", [
       `--pin=${pin}`,
-      "--timeout_ms=5000",
+      `--timeout_ms=${timeout}`,
     ])
   }
 
