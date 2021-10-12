@@ -55,8 +55,8 @@ class IRSensor:
 if __name__ == "__main__":
     GPIO.setmode(GPIO.BOARD)
 
-    pin: int = commands.getArgumentValue("pin")
-    timeout: int = commands.getArgumentValue("timeout_ms")
+    pin: int = int(commands.getArgumentValue("pin"))
+    timeout: int = int(commands.getArgumentValue("timeout_ms"))
     objectDetected = None
 
     if(pin is None):

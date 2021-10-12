@@ -3,8 +3,8 @@ import helpers.commands as commands
 
 if __name__ == "__main__":
     GPIO.setmode(GPIO.BOARD)
-    pin: int = commands.getArgumentValue("GPIO_PIN")
-    output: int = commands.getArgumentValue("OUTPUT")
+    pin: int = int(commands.getArgumentValue("GPIO_PIN"))
+    output: int = int(commands.getArgumentValue("OUTPUT"))
 
     assert pin is not None
     assert output is not None

@@ -52,7 +52,7 @@ if __name__ == '__main__':
     pin = None
     mode = None
 
-    pin: int = commands.getArgumentValue("GPIO_PIN")
+    pin: int = int(commands.getArgumentValue("GPIO_PIN"))
     mode = commands.getArgumentValue("mode")
     print(pin, mode)
 
