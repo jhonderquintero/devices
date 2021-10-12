@@ -59,4 +59,4 @@ if __name__ == "__main__":
             exit(0)
     else:
         IR.setTimeoutValue(timeout)
-        print(IR.getTimeoutValue, "timeoutValue")
+        print(IR.getTimeoutValue(), "timeoutValue")
