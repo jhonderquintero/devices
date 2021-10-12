@@ -18,6 +18,8 @@ class IRSensor:
         """
         Checks whether an object is currently placed in front of the sensor.
         returns GPIO.HIGH or GPIO.LOW accordingly.
+        If detect an object returns GPIO.LOW
+        else returns GPIO.HIGH
         """
         if GPIO.input(self.pin):
             return GPIO.LOW
