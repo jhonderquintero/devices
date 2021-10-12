@@ -8,7 +8,7 @@ export const setRaspberryPinOutput = (req: Request, res: Response) => {
 
   if (!pin) return res.status(400).json({ error: "Missing out pin" })
 
-  const script: ChildProcess = executePythonScript("devices/servo.py", [
+  const script: ChildProcess = executePythonScript("devices/GPIO.py", [
     `--GPIO_PIN=${pin}`,
     `--OUTPUT=${value}`,
   ])
