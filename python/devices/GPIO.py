@@ -8,10 +8,14 @@ if __name__ == "__main__":
 
     assert pin is not None
     assert output is not None
+    GPIO.setup(pin, GPIO.OUT)
 
-    if(output == 1 | output == 0):
-      GPIO.setup(pin, GPIO.OUT)
-      GPIO.output(pin, output)
-      exit(1)
-    else:
-        exit(0)
+    if(output == 1):
+        GPIO.output(pin, GPIO.HIGH)
+        exit(1)
+
+    if(output == 0):
+        GPIO.output(pin, GPIO.LOW)
+        exit(1)
+
+    exit(0)
