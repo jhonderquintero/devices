@@ -14,6 +14,15 @@ class IRSensor:
         self.pin = pin
         GPIO.setup(pin, GPIO.IN)
 
+    def setPinValue(self, newPinValue):
+        self.pin = newPinValue
+
+    def setTimeoutValue(self, newtimeoutValue):
+        self.timeout = newtimeoutValue
+
+    def getTimeoutValue(self):
+        return self.timeout
+
     def checkObjectDetected(self):
         """
         Checks whether an object is currently placed in front of the sensor.
@@ -32,7 +41,6 @@ if __name__ == "__main__":
 
     pin: int = commands.getArgumentValue("pin")
     timeout: int = commands.getArgumentValue("timeout_ms")
-    print(timeout, "timeout")
 
     if(pin is None):
         print('No pin selected, sensor cannot be executed without specify a pin')
@@ -40,11 +48,15 @@ if __name__ == "__main__":
 
     IR = IRSensor(pin)
 
-    objectDetected: int = IR.checkObjectDetected()
+    if(timeout is None):
+        objectDetected: int = IR.checkObjectDetected()
 
-    if objectDetected:
-        print('Object Detection')
-        exit(1)
+        if objectDetected:
+            print('Object Detection')
+            exit(1)
+        else:
+            print('No Object Detection')
+            exit(0)
     else:
-        print('No Object Detection')
-        exit(0)
+        IR.setTimeoutValue(timeout)
+        print(IR.getTimeoutValue, "timeoutValue")
