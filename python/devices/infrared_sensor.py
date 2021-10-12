@@ -68,7 +68,7 @@ if __name__ == "__main__":
     if(timeout is None):
         objectDetected: int = IR.checkObjectDetected()
     else:
-        objectDtected: int = IR.waitUntilObjectDetected(timeout)
+        objectDetected: int = IR.waitUntilObjectDetected(timeout)
 
     if objectDetected:
         print('Object Detection')
