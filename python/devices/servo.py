@@ -1,5 +1,6 @@
 from time import sleep
 import RPi.GPIO as GPIO
+import helpers.commands as commands
 import sys
 
 
@@ -51,15 +52,8 @@ if __name__ == '__main__':
     pin = None
     mode = None
 
-    print(sys.argv)
-    for arg in sys.argv:
-        if(arg.startswith('--GPIO_PIN=')):
-            # Parse sensor from all the possible params passed
-            pin = int(arg.split('--GPIO_PIN=')[1])
-
-        if(arg.startswith('--mode=')):
-            # Pass timeout arg, is milliseconds
-            mode = arg.split('--mode=')[1]
+    pin: int = commands.getArgumentValue("GPIO_PIN")
+    mode = commands.getArgumentValue("mode")
 
     servo = ServoMotor(pin)
 
