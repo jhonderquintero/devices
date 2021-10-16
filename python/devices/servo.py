@@ -37,10 +37,12 @@ class ServoMotor:
     def moveTo135(self):
         """ Move Servo Motor to 125 degrees """
         self.PWMInstance.ChangeDutyCycle(9)
+        sleep(1.5)
 
     def moveTo45(self):
         """ Move Servo Motor to 45 degrees """
         self.PWMInstance.ChangeDutyCycle(3.75)
+        sleep(1.5)
 
     def stop(self):
         """Stop PWM signal to Servo Motor"""
