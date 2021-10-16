@@ -13,7 +13,14 @@ export const pwmGenerator = (req: Request, res: Response) => {
 
   if (!pin) return res.status(400).json({ error: "Missing PWM out pin" })
 
-  if (!mode || (mode !== "mid" && mode !== "max" && mode !== "min")) {
+  if (
+    !mode ||
+    (mode !== "0" &&
+      mode !== "45" &&
+      mode !== "90" &&
+      mode !== "135" &&
+      mode !== "180")
+  ) {
     return res.status(400).json({ error: "Invalid PWM mode passed" })
   }
 

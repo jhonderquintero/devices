@@ -34,6 +34,14 @@ class ServoMotor:
         self.PWMInstance.ChangeDutyCycle(12)
         sleep(1.5)
 
+    def moveTo135(self):
+        """ Move Servo Motor to 125 degrees """
+        self.PWMInstance.ChangeDutyCycle(9)
+
+    def moveTo45(self):
+        """ Move Servo Motor to 45 degrees """
+        self.PWMInstance.ChangeDutyCycle(3.75)
+
     def stop(self):
         """Stop PWM signal to Servo Motor"""
         self.PWMInstance.stop()
@@ -54,16 +62,21 @@ if __name__ == '__main__':
 
     pin: int = int(commands.getArgumentValue("GPIO_PIN"))
     mode = commands.getArgumentValue("mode")
+
     print(pin, mode)
 
     servo = ServoMotor(pin)
 
-    if mode == 'min':
+    if mode == '0':
         servo.moveToMin()
-    if mode == 'max':
+    if mode == '180':
         servo.moveToMax()
-    if mode == 'mid':
+    if mode == '90':
         servo.moveToMid()
+    if mode == '45':
+        servo.moveTo45()
+    if mode == '135':
+        servo.moveTo135()
 
     servo.stop()
 
