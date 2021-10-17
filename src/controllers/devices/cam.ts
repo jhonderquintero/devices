@@ -3,7 +3,7 @@ import { executeCameraScriptSync } from "../../helpers/python_run"
 import path from "path"
 
 export const imageGenerator = (req: Request, res: Response) => {
-  const result = executeCameraScriptSync("../../../images/img.jpg")
+  const result = executeCameraScriptSync("~/devices/images/img.jpg")
   if (result)
     return res
       .status(200)
