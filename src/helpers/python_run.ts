@@ -50,5 +50,5 @@ export const executeCameraScriptSync = (filePath: string): Boolean => {
   } catch (error) {
     state = false
   }
-  return true
+  return state
 }
