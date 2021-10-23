@@ -1,6 +1,7 @@
 import { Router } from "express"
 import { imageGenerator } from "../controllers/devices/cam"
 import { infraredSensorDetection } from "../controllers/devices/infraredSensor"
+import { LCDDisplay } from "../controllers/devices/lcd"
 import { pwmGenerator } from "../controllers/devices/pwm"
 import { setRaspberryPinOutput } from "../controllers/devices/raspberryOutput"
 import { neuralNetwork } from "../controllers/NN/NN"
@@ -13,6 +14,7 @@ const router: Router = Router()
 router.get("/devices/IRsensor", [validateErrors], infraredSensorDetection)
 router.get("/NN/classification", [validateErrors], neuralNetwork)
 router.get("/devices/pwm-generator", [validateErrors], pwmGenerator)
+router.get("/devices/lcd-display", [validateErrors], LCDDisplay)
 
 // POSTS
 router.post("/devices/setGPIO", [validateErrors], setRaspberryPinOutput)
