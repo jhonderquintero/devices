@@ -41,8 +41,11 @@ if(test_mode == 'True'):
 else:
     text: str = commands.getArgumentValue("text")
     assert text is not None
-
+    print(text)
+    print(type(text))
     lcd.write_string(text)
+    lcd.close()
+    GPIO.cleanup()
 
 exit(0)
 

@@ -56,7 +56,7 @@ if __name__ == "__main__":
     GPIO.setmode(GPIO.BOARD)
 
     pin: int = int(commands.getArgumentValue("pin"))
-    timeout: int = int(commands.getArgumentValue("timeout_ms"))
+    timeout = commands.getArgumentValue("timeout_ms")
     objectDetected = None
 
     if(pin is None):
@@ -68,7 +68,7 @@ if __name__ == "__main__":
     if(timeout is None):
         objectDetected: int = IR.checkObjectDetected()
     else:
-        objectDetected: int = IR.waitUntilObjectDetected(timeout)
+        objectDetected: int = IR.waitUntilObjectDetected(int(timeout))
 
     if objectDetected:
         print('Object Detection')
