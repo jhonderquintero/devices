@@ -70,14 +70,16 @@ if __name__ == '__main__':
 
     if mode == '0':
         servo.moveToMin()
-    if mode == '180':
+    elif mode == '180':
         servo.moveToMax()
-    if mode == '90':
+    elif mode == '90':
         servo.moveToMid()
-    if mode == '45':
+    elif mode == '45':
         servo.moveTo45()
-    if mode == '135':
+    elif mode == '135':
         servo.moveTo135()
+    else:
+        servo.moveTo(mode)
 
     servo.stop()
 
