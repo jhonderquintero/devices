@@ -1,7 +1,7 @@
 
 import RPi.GPIO as GPIO
 import helpers.commands as commands
-
+from time import sleep
 
 class IRSensor:
     """
@@ -52,6 +52,7 @@ class IRSensor:
         self.__setTimeoutValue(timeout)
         GPIO.wait_for_edge(self.pin, GPIO.FALLING)
         while True:
+            sleep(0.05)
             if(GPIO.input(self.pin) == 0): return True
 
 
