@@ -49,7 +49,7 @@ class ServoMotor:
 
     def moveTo(self, dt):
         """Move to a given angle, calculed by the duty cycle"""
-        assert dt is None
+        assert dt is not None
 
         self.PWMInstance.ChangeDutyCycle(dt)
         sleep(1.5)
