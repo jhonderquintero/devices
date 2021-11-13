@@ -5,7 +5,7 @@ import { executePythonScript } from "../../helpers/python_run"
 export const setRaspberryPinOutput = (req: Request, res: Response) => {
   const bodyParams = req.body
   const { pin, status } = bodyParams
-
+  console.log(req.body)
   if (!pin) return res.status(400).json({ error: "Missing out pin" })
   if (!status) return res.status(400).json({ error: "Missing out status" })
 

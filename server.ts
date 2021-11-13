@@ -11,10 +11,10 @@ const app: Application = express()
 app.set("port", process.env.PORT)
 
 // Middlewares
-app.use(cors())
 app.use(morgan("dev"))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+app.use(cors())
 
 app.use("/", devices) // devices route
 
