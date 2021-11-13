@@ -1,3 +1,4 @@
+
 import RPi.GPIO as GPIO
 import helpers.commands as commands
 
@@ -49,7 +50,9 @@ class IRSensor:
             returns: Boolean value, whether the object was detected or not (None or True).
         """
         self.__setTimeoutValue(timeout)
-        return GPIO.wait_for_edge(self.pin, GPIO.FALLING, timeout=self.timeout)
+	while True:
+                GPIO.wait_for_edge(self.pin, GPIO.FALLING)
+                if(GPIO.input(self.pin)): return True
 
 
 if __name__ == "__main__":

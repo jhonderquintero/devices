@@ -51,7 +51,7 @@ class ServoMotor:
         """Move to a given angle, calculed by the duty cycle"""
         assert dt is not None
 
-        self.PWMInstance.ChangeDutyCycle(dt)
+        self.PWMInstance.ChangeDutyCycle(int(dt))
         sleep(1.5)
 
 
