@@ -36,9 +36,9 @@ class IRSensor:
             else returns GPIO.HIGH
         """
         if GPIO.input(self.pin):
-            return GPIO.HIGH
-        else:
             return GPIO.LOW
+        else:
+            return GPIO.HIGH
 
     def waitUntilObjectDetected(self, timeout):
         """
@@ -50,10 +50,10 @@ class IRSensor:
             returns: Boolean value, whether the object was detected or not (None or True).
         """
         self.__setTimeoutValue(timeout)
-        GPIO.wait_for_edge(self.pin, GPIO.FALLING)
+        GPIO.wait_for_edge(self.pin, GPIO.RISING)
         while True:
-            sleep(0.05)
-            if(GPIO.input(self.pin) == 0): return True
+            sleep(0.1)
+            if(GPIO.input(self.pin) == 1): return True
 
 
 if __name__ == "__main__":
